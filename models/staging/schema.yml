@@ -1,0 +1,74 @@
+
+version: 2
+
+sources:
+  - name: raw-sbx
+    project: raw-sbx-dummy
+    dataset: employees
+    description: Copy of the employees table from operational database
+    tables:
+      - name: employees
+        columns:
+          - name: id
+          - name: ip_address
+          - name: email
+          - name: address_longitude
+          - name: birth_date
+          - name: start_date
+          - name: ssn
+          - name: license_plate
+          - name: username
+          - name: city
+          - name: position
+          - name: department
+          - name: salary
+          - name: bonus
+          - name: image_url
+          - name: credit_card_number
+      - name: employees_nest
+        columns:
+          - name: id
+          - name: compensation
+      - name: mapping_city
+        columns:
+          - name: city
+          - name: city_ascii
+          - name: state_id
+          - name: state_name
+          - name: county_fips
+          - name: county_name
+          - name: lat
+          - name: lng
+          - name: population
+          - name: density
+          - name: source
+          - name: military
+          - name: incorporated
+          - name: timezone
+          - name: ranking
+          - name: zips
+          - name: id
+
+models:
+  - name: stg_simple_copy
+    description: "Direct copy of the original employee table"
+    columns:
+      - name: id
+        test:
+          - unique
+          - not_null
+      - name: ip_address
+      - name: email
+      - name: address_longitude
+      - name: birth_date
+      - name: start_date
+      - name: ssn
+      - name: license_plate
+      - name: username
+      - name: city
+      - name: position
+      - name: department
+      - name: salary
+      - name: bonus
+      - name: image_url
+      - name: credit_card_number
