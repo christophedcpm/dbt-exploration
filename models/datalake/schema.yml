@@ -1,5 +1,0 @@
-version: 2
-
-models:
-  # - name: history // Impossible due to cycle error
-  - name: dl_simple_copy

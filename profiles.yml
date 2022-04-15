@@ -1,0 +1,25 @@
+dbt-exploration:
+  outputs:
+    dev:
+      dataset: dbt-exploration-dev
+      fixed_retries: 1
+      location: EU
+      method: service-account
+      keyfile: ./creds.json # THIS FILE WILL BE GENERATED USING SECRETS DURING BUILD TIME
+      priority: interactive
+      project: dbt-exploration-347213
+      threads: 10
+      timeout_seconds: 300
+      type: bigquery
+    prod:
+      dataset: dbt-exploration-prod
+      fixed_retries: 1
+      location: EU
+      method: service-account
+      keyfile: ./creds.json # THIS FILE WILL BE GENERATED USING SECRETS DURING BUILD TIME
+      priority: interactive
+      project: dbt-exploration-347213
+      threads: 10
+      timeout_seconds: 300
+      type: bigquery
+  target: dev

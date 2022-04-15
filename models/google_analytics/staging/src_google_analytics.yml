@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: raw_google_analytics
+    project:  raw-sbx-dummy
+    dataset:  google_analytics
+    tables:
+      - name: sessions
+      - name: country_mapping

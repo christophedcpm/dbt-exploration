@@ -10,14 +10,22 @@ sources:
       - name: employees
         columns:
           - name: id
+            tests:
+              - not_null
+              - unique
           - name: ip_address
           - name: email
+            tests:
+                - not_null
+                - unique
           - name: address_longitude
           - name: birth_date
           - name: start_date
           - name: ssn
           - name: license_plate
           - name: username
+            tests:
+                - unique
           - name: city
           - name: position
           - name: department

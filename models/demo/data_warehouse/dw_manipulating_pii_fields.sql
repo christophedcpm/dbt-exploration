@@ -1,0 +1,5 @@
+SELECT
+    *,
+    CURRENT_TIMESTAMP() AS DAG_TS,
+    SALARY + BONUS AS TOTAL_COMPENSATION
+FROM {{ ref("stg_simple_copy") }}
