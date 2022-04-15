@@ -24,8 +24,6 @@ sources:
           - name: ssn
           - name: license_plate
           - name: username
-            tests:
-                - unique
           - name: city
           - name: position
           - name: department
