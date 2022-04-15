@@ -1,7 +1,7 @@
-dbt-exploration:
+main:
   outputs:
     dev:
-      dataset: dbt-exploration-dev
+      dataset: dbt_exploration_dev
       fixed_retries: 1
       location: EU
       method: service-account
@@ -12,7 +12,7 @@ dbt-exploration:
       timeout_seconds: 300
       type: bigquery
     prod:
-      dataset: dbt-exploration-prod
+      dataset: dbt_exploration_prod
       fixed_retries: 1
       location: EU
       method: service-account

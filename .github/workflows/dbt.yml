@@ -1,0 +1,27 @@
+name: Schedule dbt
+
+on:
+  push:
+  schedule:
+   - cron:  '0 8 * * *'
+
+jobs:
+  dbt:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3.0.1
+
+      - name: dbt-run
+        uses: mwhitaker/dbt-action@master
+        with:
+          dbt_command: "dbt run --profiles-dir ."
+        env:
+          DBT_BIGQUERY_TOKEN: ${{ secrets.DBT_BIGQUERY_TOKEN }}
+      
+      - name: dbt-test
+        uses: mwhitaker/dbt-action@master
+        with:
+          dbt_command: "dbt test --profiles-dir ."
+        env:
+          DBT_BIGQUERY_TOKEN: ${{ secrets.DBT_BIGQUERY_TOKEN }}
